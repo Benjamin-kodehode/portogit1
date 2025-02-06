@@ -1,0 +1,277 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Main Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 50px 20px 20px;
+}
+
+.container.light {
+  background: linear-gradient(to bottom, #898989, blue);
+  color: black;
+}
+
+.container.dark {
+  background: linear-gradient(to bottom, #341539, #2c2d2d);
+  color: white;
+}
+
+/* Top Bar - For the toggles */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* Layout - Flex container for the three sections */
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1600px;
+  gap: 120px;
+  margin: 0 auto;
+}
+
+/* Profile Section (Left) */
+.profile-section {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: -60px;
+  margin-right: 40px;
+}
+
+.profile-img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Text Section (Center) */
+.text-section {
+  flex: 2.5;
+  text-align: left;
+  max-width: 750px;
+  margin-left: -50px;
+}
+
+.text-section h2 {
+  font-size: 3.2rem;
+  max-width: 110%;
+}
+
+.text-section p {
+  font-size: 1.6rem;
+  max-width: 100%; /* Fixed */
+}
+
+/* FAQ Section (Right) */
+.faq-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* FAQ Items */
+.faq-item {
+  background-color: black;
+  padding: 20px;
+  border-radius: 25px;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  width: 600px;
+}
+
+.faq-item:hover {
+  background-color: #3a3a3a;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 10px;
+  font-size: 1.4rem;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Project Slider Container */
+.project-slider-container {
+  position: absolute;
+  bottom: 50px; /* Move the slider further down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* Adjusted width to 50% */
+  max-width: 500px; /* Adjusted max-width */
+  height: auto; /* Adjusted height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider Container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjusted height */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  height: 100%;
+}
+
+/* Slide */
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Slide Image */
+.slide img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  max-height: 100%; /* Ensure the image doesn't exceed the container height */
+  width: auto; /* Allow the width to adjust based on aspect ratio */
+  height: auto; /* Allow the height to adjust based on aspect ratio */
+  object-fit: contain; /* Maintain aspect ratio without cropping */
+  border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px; /* Increased padding for better spacing */
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: -10px; /* Increased distance from left side */
+}
+
+.next {
+  right: -10px; /* Increased distance from right side */
+}
+
+/* Links without decoration and larger text */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Language Toggle Button */
+.language-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.language-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Project Header */
+.project-header {
+  text-align: center;
+  margin-bottom: 20px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.project-header h2 {
+  font-size: 2.5rem;
+  margin: 0; /* Remove default margin */
+}
+
+.project-header h3 {
+  font-size: 1.8rem;
+  color: #777;
+  margin: 0; /* Remove default margin */
+}
+
+/* Pagination Dots */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.pagination-dot.active {
+  background-color: #333;
+}
