@@ -1,13 +1,16 @@
 {
+  "homepage": "https://https://github.com/Benjamin-kodehode/portogit1"
   "name": "porto2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.474.0",
