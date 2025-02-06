@@ -24,17 +24,17 @@ const FAQItem = ({ question, answer, className }) => {
 
 const projects = [
   {
-    img: "/ball.png", // Absolute path (image in public folder)
+    img: "/ball.png",
     link: "/public/projects/API-oppgave/index.html",
     name: "Pokeapi + Games",
   },
   {
-    img: "/cookie.png", // Absolute path (image in public folder)
+    img: "/cookie.png",
     link: "/public/projects/cookies/index.html",
     name: "Cookieclicker + React",
   },
   {
-    img: "/link.jpg", // Absolute path (image in public folder)
+    img: "/link.jpg"
     link: "/public/projects/Linkmover/index.html",
     name: "Zelda Eventlisteners",
   },
@@ -57,13 +57,13 @@ const ProjectSlider = () => {
 
   return (
     <div className="project-slider-container">
-      {/* Headers Above the Slider */}
+      {}
       <div className="project-header">
         <h2>Projects</h2>
         <h3>{projects[currentSlide].name}</h3>
       </div>
 
-      {/* Slider */}
+      {}
       <div className="slider-container">
         <div
           className="slider"
@@ -93,7 +93,7 @@ const ProjectSlider = () => {
         </button>
       </div>
 
-      {/* Pagination Dots */}
+      {}
       <div className="pagination">
         {projects.map((_, index) => (
           <button
@@ -126,7 +126,7 @@ const App = () => {
     localStorage.setItem("language", newLanguage ? "no" : "en");
   };
 
-  // On component mount, check localStorage for saved theme and language
+ 
   React.useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
